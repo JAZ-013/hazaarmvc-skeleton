@@ -1,0 +1,32 @@
+{
+    "production": {
+        "app": {
+            "name": "Hazaar Skeleton Application",
+            "version": "1.0.0",
+            "locale": "en_AU.UTF-8",
+            "timezone": "UTC",
+            "layout": "application",
+            "defaultController": "Index"
+        },
+        "paths": {
+            "model": "models",
+            "view": "views",
+            "controller": "controllers"
+        },
+        "php": {
+            "display_startup_errors": 0,
+            "display_errors": 0
+        },
+		"view": {
+            "requires": [ "application.js" ],
+            "link": [ "application.css" ]
+		}
+    },
+    "development": {
+        "include": "production",
+        "php": {
+            "display_startup_errors": 1,
+            "display_errors": 1
+        }
+    }
+}
