@@ -1,5 +1,9 @@
 <?php
 
-if(file_exists($_SERVER['DOCUMENT_ROOT'] . $_SERVER['SCRIPT_NAME'])) return false;
+// Check if the requested file is not this index.php file and the file actually exists
+if(php_sapi_name() === 'cli-server'
+    && $_SERVER['SCRIPT_FILENAME'] !== __FILE__
+    && is_file(realpath(__DIR__ . parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH))))
+    return false;
 
 include('index.php');
